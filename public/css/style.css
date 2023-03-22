@@ -3,3 +3,57 @@
     text-align: center;
     color: red;
 }
+
+.addNews-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.addNews-name {
+    margin: 10px 0px;
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 0.3px;
+    max-width: 250px;
+    width: 100%;
+    box-shadow: 0.1px 0.4px 5px black;
+}
+
+.addNews-text {
+    resize: unset;
+    max-width: 250px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.addNews-min-text {
+    resize: unset;
+    max-width: 250px;
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 1px 1px 20px;
+    margin: 10px 0;
+    padding: 15px;
+}
+
+.addNews-submit {
+    background: white;
+    border: solid 0.3px;
+    padding: 7px;
+    font-style: italic;
+    font-weight: 900;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.addNews-submit:hover {
+    background: black;
+    color: white;
+    border-color: white;
+
+}

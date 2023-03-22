@@ -25,6 +25,7 @@
     <main role="main" class="container">
       <div class="my-3 p-3 bg-white rounded box-shadow">
         <h6 class="border-bottom border-gray pb-2 mb-0">Recent updates</h6>
+
         @foreach ($categories as $item)
             <a href="/category/{{$item['id']}}">
                 <div class="media text-muted pt-3">
