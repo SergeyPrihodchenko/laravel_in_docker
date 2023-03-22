@@ -2,36 +2,33 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Contracts\View\View;
+use App\Models\News\CategoryNews;
 
 class CategoryController extends Controller
 {
 
     use NewsTrait;
 
+    private CategoryNews $category;
+
+    public function __construct()
+    {
+        $this->category = new CategoryNews();
+    }
+
+
     public function category() {
         return view('categories.category', [
-            'categories' => [
-                1 => ['id' => 1, 'name' => 'Технологии'],
-                2 => ['id' => 2, 'name' => 'Экономика'],
-                3 => ['id' => 3, 'name' => 'Политика']
-                ]
+            'categories' => $this->category->getCategory()
         ]);
     }
 
     public function news(int $categoryID) 
     {
 
-        $categoryArr = [
-            1 => [1,3,5],
-            2 => [2,4,6],
-            3 => [0,7,8]
-        ];
-
         $arr = [];
 
-        foreach($categoryArr[$categoryID] as $el) {
+        foreach($this->category->getCategorySortById($categoryID) as $el) {
             $arr[] = $this->sortNews($el);
         }
 
@@ -41,6 +38,6 @@ class CategoryController extends Controller
 
     private function sortNews($id)
     {
-        return $this->getNews($id);
+        return $this->getNews((int)$id);
     }
 }
