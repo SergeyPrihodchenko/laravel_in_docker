@@ -18,7 +18,7 @@ class CategoryController extends Controller
 
 
     public function category() {
-        return view('categories.category', [
+        return view('category', [
             'categories' => $this->category->getCategory()
         ]);
     }
@@ -32,7 +32,7 @@ class CategoryController extends Controller
             $arr[] = $this->sortNews($el);
         }
 
-        return view('categories.sortNews', ['dataNews' => $arr]);
+        return view('news', ['newsList' => $arr]);
     }
 
 

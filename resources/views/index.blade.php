@@ -6,6 +6,9 @@
 @section('content')
     @include('layouts.main.content')
 @endsection
+@section('form')
+    @include('layouts.main.form')
+@endsection
 @section('footer')
     @include('layouts.main.footer')
 @endsection
