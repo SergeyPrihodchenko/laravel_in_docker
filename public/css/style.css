@@ -1,0 +1,16 @@
+.form-signin {
+    padding: 10px;
+    max-width: 450px;
+    width: 100%;
+}
+
+.form-signin-admin {
+    padding: 15px;
+    margin: 0 auto;
+    max-width: 400px;
+    width: 100%;
+}
+
+.form-control {
+    margin: 5px 0px;
+}
