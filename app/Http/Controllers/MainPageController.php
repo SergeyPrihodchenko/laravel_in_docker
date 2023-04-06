@@ -9,8 +9,6 @@ class MainPageController extends Controller
 {
     public function index(News $news)
     {
-
-        dd($news->getNews());
-        return view('pages.main');
+        return view('pages.main', ['dataNews' => $news->getNews()]);
     }
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\MainPageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,4 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MainPageController::class, 'index']);
+Route::get('/', [MainPageController::class, 'index'])->name('main');
+
+Route::get('/admPanel', [AdminPanelController::class, 'index'])->name('admPanel');
