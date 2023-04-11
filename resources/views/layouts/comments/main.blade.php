@@ -23,10 +23,9 @@
   <body>
 
   @yield('header')
-  @yield('menu')
-    <main role="main">
+
       @yield('content')
-    </main>
+
 
     @yield('footer')
 

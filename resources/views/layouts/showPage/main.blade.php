@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>News</title>
+    <title>Show news</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/album/">
 
@@ -23,7 +23,7 @@
   <body>
 
   @yield('header')
-  @yield('menu')
+
     <main role="main">
       @yield('content')
     </main>
