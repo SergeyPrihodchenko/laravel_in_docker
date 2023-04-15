@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CommentRequest;
+use App\Http\Requests\CommentsRequest;
 use App\Models\Comments;
 use Illuminate\Http\Request;
 
@@ -14,12 +15,10 @@ class CommentController extends Controller
         return view('pages.comments', ['commentsData' => $comments::query()->get()]);
     }
 
-    public function createComment()
+    public function createComment(CommentsRequest $request)
     {
-
-        $data = \request()->all();
-        unset($data['_token']);
+        $data = $request->validated();
         Comments::create($data);
-        return redirect('/comments');
+        return \redirect('/comments');
     }
 }

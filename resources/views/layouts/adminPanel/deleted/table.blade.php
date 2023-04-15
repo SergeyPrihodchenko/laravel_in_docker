@@ -1,50 +1,26 @@
+<p class="h1">{{$title}}</p>
 <table class="table table-striped">
   <thead>
     <tr>
+      <th scope="col">Заголовок</th>
       <th scope="col">Содержимое</th>
-      <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
+    @foreach ($data as $item)
     <tr>
-      <td>Новости</td>
+      <td>{{__($item['name'])}}</td>
+      @if (array_key_exists('description', $item))
+      <td>{{__($item['description'])}}</td>
+      @endif
       <td>
-        <form action="">
+        <form action="/{{$route}}/{{$item['id']}}/{{$titlePage}}" method="POST">
           @csrf
           @method('delete')
           <button class="text-danger" style="border:none; cursor:pointer" type="submit">Удал.</button>
         </form>
       </td>
     </tr>
-    <tr>
-      <td>Категории</td>
-      <td>
-        <form action="">
-          @csrf
-          @method('delete')
-          <button class="text-danger" style="border:none; cursor:pointer" type="submit">Удал.</button>
-        </form>
-      </td>
-    </tr>
-    <tr>
-      <td>Заказы</td>
-      <td>
-        <form action="">
-          @csrf
-          @method('delete')
-          <button class="text-danger" style="border:none; cursor:pointer" type="submit">Удал.</button>
-        </form>
-      </td>
-    </tr>
-    <tr>
-      <td>Комментарии</td>
-      <td>
-        <form action="">
-          @csrf
-          @method('delete')
-          <button class="text-danger" style="border:none; cursor:pointer" type="submit">Удал.</button>
-        </form>
-      </td>
-    </tr>
+    @endforeach
   </tbody>
 </table>

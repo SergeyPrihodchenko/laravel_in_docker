@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CommentRequest extends FormRequest
+class CommentsRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,7 +22,17 @@ class CommentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|max:50',
+            'text' => 'required|max:1000'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'name.requered' => 'Поле необходимо заполнить',
+            'name.max' => 'Слишком много символов',
+            'text.requered' => 'Поле необходимо заполнить'
         ];
     }
 }

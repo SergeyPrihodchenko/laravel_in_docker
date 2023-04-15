@@ -18,13 +18,10 @@ class CategoriesSeed extends Seeder
 
     private function getCategory()
     {
-        $data = [];
+        $data = [
+            ['name' => 'Спорт'], ['name' => 'Политика'], ['name' => 'Здоровье'], ['name' => 'Технологии'], ['name' => 'Экономика']
+        ];
 
-        for($i = 0; $i < 10; $i++) {
-            $data[] = [
-                'name' => 'name' . $i
-            ];
-        }
 
         return $data;
     }
