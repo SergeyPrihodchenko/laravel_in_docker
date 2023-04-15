@@ -5,9 +5,9 @@
             <form class="form-signin" action="{{route("createComment")}}" method="POST">
               @csrf
               <label for="inputEmail" class="sr-only">Name</label>
-              <input name="name" type="name" id="inputName" class="form-control" placeholder="Ваше имя" required>
+              <input name="name" type="name" id="inputName" class="form-control" placeholder="Ваше имя" value="{{old('name')}}" required>
               <div class="form-floating">
-                <textarea name="text" class="form-control" placeholder="Введиете ваш комментарий" id="floatingTextarea"></textarea>
+                <textarea name="text" class="form-control" placeholder="Введиете ваш комментарий" id="floatingTextarea">{{old('text')}}</textarea>
               </div>
               <button class="btn btn-lg btn-primary btn-block" type="submit">Отправить</button>
             </form>
@@ -26,8 +26,15 @@
       </div>
       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
         <nav class="my-2 my-md-0 mr-md-3">
+          <a class="p-2 text-dark" href="{{Route('main')}}">Главная</a>
           <a class="p-2 text-dark" href="{{Route('comments')}}">Комментарии</a>
           <a class="p-2 text-dark" href="{{Route('admPanel')}}">Административная панель</a>
         </nav>
       </div>
+      @error('name')
+          <h1>{{$message}}</h1>
+      @enderror
+      @error('text')
+          <h1>{{$message}}</h1>
+      @enderror
     </header>

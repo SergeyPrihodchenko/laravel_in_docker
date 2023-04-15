@@ -4,7 +4,6 @@ use App\Http\Controllers\AdminPanelController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MainPageController;
 use App\Http\Controllers\ShowPageController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,7 +25,13 @@ Route::get('/show/{id}', [ShowPageController::class, 'index'])->name('show');
 Route::prefix('admPanel')->group(
     function() {
         Route::get('/', [AdminPanelController::class, 'index'])->name('admPanel');
-        Route::get('/delete', [AdminPanelController::class, 'deleted'])->name('deletedPanel');
+        Route::get('/delete/{tables}', [AdminPanelController::class, 'deletedView'])->name('deletedPanel');
+
+        Route::get('/update/{tables}', [AdminPanelController::class, 'updateView'])->name('updatePanel');
+
+        Route::delete('/{id}/news', [AdminPanelController::class, 'deletedNews'])->name('deleteNews');
+        Route::delete('/{id}/category', [AdminPanelController::class, 'deletedCategory'])->name('deleteCategory');
+        Route::delete('/{id}/comments', [AdminPanelController::class, 'deletedComments'])->name('deleteComments');
     }
 );
 
