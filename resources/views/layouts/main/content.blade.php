@@ -11,7 +11,9 @@
                 <p class="card-text">{{$news->short_description}}</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
-                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    <a href="/show/{{$news->id}}">
+                      <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                    </a>
                   </div>
                   <small class="text-muted">9 mins</small>
                 </div>

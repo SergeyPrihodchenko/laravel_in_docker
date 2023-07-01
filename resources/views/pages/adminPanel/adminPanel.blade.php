@@ -3,8 +3,8 @@
 @section('header')
     @include('layouts.main.header')
 @endsection
-@section('form')
-    @include('layouts.adminPanel.form')
+@section('table')
+    @include('layouts.adminPanel.table')
 @endsection
 @section('footer')
     @include('layouts.main.footer')

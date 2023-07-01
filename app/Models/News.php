@@ -14,4 +14,9 @@ class News extends Model
     {
         return DB::table('news')->get();
     }
+
+    public function getShowNews($id)
+    {
+        return DB::table('news')->where('id', $id)->first();
+    }
 }
